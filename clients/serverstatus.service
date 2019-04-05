@@ -1,0 +1,15 @@
+#/etc/systemd/system/serverstatus.service
+
+[Unit]
+Description=ServerStatus Client
+Documentation=https://github.com/LexsionLee/ServerStatus
+After=network.target
+
+[Service]
+Type=simple
+IgnoreSIGPIPE=no
+ExecStart=/usr/local/share/ServerStatus/client-linux.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
