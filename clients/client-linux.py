@@ -140,9 +140,9 @@ def tupd():
     t = int(s[:-1])-1
     s = subprocess.check_output("ss -u|wc -l", shell=True)
     u = int(s[:-1])-1
-    s = subprocess.check_output("ps -ef|wc -l", shell=True)
+    s = subprocess.check_output("ps ef|wc -l", shell=True)
     p = int(s[:-1])-2
-    s = subprocess.check_output("ps -xH|wc -l", shell=True)
+    s = subprocess.check_output("ps xH|wc -l", shell=True)
     d = int(s[:-1])-2
     return t,u,p,d
 
